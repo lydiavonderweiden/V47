@@ -1,0 +1,146 @@
+\section{Theorie}
+\label{sec:Theorie}
+
+Die Wärmekapazität ist definiert als die Wärmemenge $\Delta Q$, die benötigt wird, um einen Festkörper um einen Betrag $\Delta T$ zu erwärmen.
+\begin{equation}
+	\text{C} =  \frac{\Delta Q}{\Delta T} \,.
+	\label{eq:C-Def}
+\end{equation}
+Da dies anhängig von der betrachteten Stoffmenge ist, wird C meistens auf die Stoffmenge 1 mol bezogen. So lassen sich unterschiedliche Materialien miteinander vergleichen. Diese meterialbezogenen Werte werden als spezifische Wärmekapazität bezeichnet und werden zur Unterscheidung mit einen kleinen c geschrieben.
+\begin{equation}	
+	c^m = \frac{\Delta Q}{\Delta T \cdot N}
+	\label{eq:c_mol}
+\end{equation}
+Der Zusammenhang zwischen Wärmekapazität und innerer Energie U folgt aus dem 1. Hauptsatz der Thermodynamik:
+\begin{equation}
+	dQ = dU - dW = dU - pdV \,.
+	\label{eq:1.Haupt}
+\end{equation}
+Dabei ist $dQ$ die dem System zugeführte Wärmemenge, $dU$ die Änderung der inneren Energie und $dW = - pdV$ die am System geleistete Arbeit.
+Die erzielte Änderung der inneren Energie hängt somit davon ab, ob beim Erwärmungsvorgang der Druck $p$, oder das Volumen$V$ konstant gehalten wird.
+
+Bei konstantem Volumen ist die Wärmekapazität somit
+\begin{equation}
+	C_V = \pdv{Q}{T}\eval_V = \pdv{U}{T}\eval_V \,.
+	\label{eq:cv_algemein}
+\end{equation}
+Daraus ergibt sich sich eine direkte Verbindung zwischen der inneren Energie des Festkörpers und der Wärmekapazität bei konstantem Volumen. Da allerdings dieser Vorgang experimentell schwer umzusetzen ist wird häufig die Wärmekapazität bei konstantem Druck gemessen:
+\begin{equation}
+	C_p = \pdv{Q}{T}\eval_p \,.
+	\label{eq:cp_algemein}
+\end{equation}
+Die beiden Werte hängen über folgende Beziehung zusammen:
+\begin{equation}
+	C_p - C_V = 9 \alpha^2 \kappa V_0 T \,,
+\end{equation}
+mit dem linearen Ausdehnungskoeffizienten $\alpha$, dem Kompressionsmodul $\kappa$ und den Molvolumem $V_0$.
+
+\subsection{Klassische Betrachtung}
+
+Im klassischen Modell für kristalline Festkörper sind die Atome durch Gitterkräfte an ihren Standort gebunden, führen um diesen aber Schwingungen in allen drei Raumrichtungen  aus. Nach den Gleichverteilungssatz haben diese jeweils eine mittlere potentielle und kinetische Energie von
+\begin{equation}
+	\expval{u_i} = \frac{1}{2}k_B T \,.
+\end{equation}
+Mit $N_A$ Atomen, wobei $N_A$ die Avogadro-Konstante ist, ergibt sich so für den gesamten Festkörper eine mittlere innere Energie von
+\begin{equation}
+	\expval{U} = + 3N_A \cdot 2 \frac{1}{2} k_B T =  3 N_A k_B T \,.
+\end{equation}
+Damit berechnet sich die molare spezifische Wärmekapazität von
+\begin{equation}
+	C_V = 3 N_A k_B = 3 R \,.
+	\label{eq:D-P}
+\end{equation}
+R ist herbei die allgemeine Gaskonstante. Dieses Ergebnis wird als das Gesetz von Dulong-Petit bezeichnet.
+Es besteht weder eine Material- noch eine Temperaturabhängigkeit. Experimentelle Daten zeigen aber,  dass die Wärmekapazität von Festkörpern sehr wohl eine Abhängigkeit von Temperatur und Material aufweisen. Dieser nähert sich aber bei hohen Temperaturen an den Dulong-Petit Wert an. 
+
+\subsection{Quantenmechanische Betrachtung}
+
+Der beobachte Verlauf der Temperaturabhängigkeit der Wärmekapazität kann klassisch nicht beschrieben werden. Bei der quantenmechanischen Betrachtung können die Gitterschwingungen nur noch diskrete Werte von ganzzahligen Vielfachen von $\hbar \omega$, mit $\omega$ die Dispersion der Phononenschwingungen, annehmen. 
+\begin{equation}
+	E_n = \qty(n + \frac{1}{2})\hbar \omega
+\end{equation}
+Bei genügend kleinen Temperaturen gilt $\hbar \omega \gg k_B T$. Damit können die Oszillatoren keine weitere Energie aus den Wärmebad aufnehmen und verbleiben in ihrer Grundschwingung. Die Schwingungsmoden werden so bei abnehmender Temperatur zunehmend eingefroren.
+
+Mit diesen Überlegungen errechnet sich der quantenmechanische Erwartungswert der inneren Energie mit:
+\begin{align}
+	\expval{U} &= 3N \frac{\sum_n E_n e^{-\beta E_n}}{\sum_n e^{-\beta E_n} }  \\
+			& = 3N \hbar \omega \qty(\frac{1}{2} + \frac{1}{\exp{\frac{\hbar\omega}{k_B T}}-1}) \,.
+\end{align}
+Letzteres ist dabei eine Form der Bose-Einstein-Verteilung.
+
+\subsubsection{Einstein-Näherung}
+
+In der Einstein-Näherung wird die Annahme getroffen, dass alle 3N Eigenschwingungen des Gitters die einheitliche Frequenz $\omega_E$ haben. Damit ist die mittlere innere Energie
+\begin{equation}
+	\expval{U} =  3N \hbar \omega_E \qty(\frac{1}{2} + \frac{1}{\exp{\frac{\hbar\omega_E}{k_B T}}-1}) \,.
+\end{equation}
+Mit Einführung der Einstein-Temperatur
+\begin{equation}
+	\Theta_E = \frac{\hbar\omega_E}{k_B}
+\end{equation}
+ist die Wärmekapazität nach Einstein somit:
+\begin{equation}
+	C_V^E = 3N k_B \qty(\frac{\Theta_E}{T})^2 \frac{\exp(\Theta_E/T)}{[\exp(\Theta_E/T)-1]^2} \,.
+	\label{eq:Cv_Einstein}
+\end{equation}
+%
+Für diese ergibt sich in der Näherung von hohen und tiefen Temperaturen:
+\begin{equation}
+	C_V^E = \begin{cases}
+		 3N_A k_B \qty(\frac{\Theta_E}{T})^2 e^{-\Theta_E/T} &\quad T \ll\Theta_E \\
+		3N_A k_B &\quad T \gg \Theta_E 		
+	\end{cases}
+\end{equation}
+Für hohe Temperaturen erhält man wieder das Dulong-Petit-Gesetz. Bei tiefen Temperaturen tritt zwar eine Abnahme der Wärmekapazität ein, allerdings unterscheidet diese sich immer noch von den experimentell erhaltenden Daten, da diese häufig mit T$^3$ abfallen.
+Diese Abweichung lässt sich damit erklären, dass die gewählte konstante Dispersion eher den Verlauf der optischen Phononen entspricht, bei niedrigen Temperaturen allerdings die akustischen Phononen dominieren.
+
+\begin{figure}
+  \centering
+  \includegraphics{content/Phononen.jpg}
+  \caption{Darstellung der Dispersionsrelation von Phononen in der ersten Brillouin-Zone. \cite{GrossMarx+2018}}
+  \label{fig:aufbau}
+\end{figure}
+
+\subsubsection{Debye-Näherung}
+
+Bei der Debye-Näherung werden alle Phononenzweige durch drei Zweige mit linearer Dispersion von $\omega_i=v_iq$ genähert. Diese Annahme passt gut zu den bei tiefen Temperaturen überwiegenden drei Zweigen der akustischen Phononen.
+
+Zudem wird statt einer Summation über alle Wellenvektoren q eine Integration über eine Kugel mit Radius $q_D$ durchgeführt. Dabei wird der Debey-Wellenvektor $q_D$ so gewählt, dass genau N Wellenvektoren im Integral enthalten sind.
+Mit den Wissen, dass im q-Raum  ein Zustand das Volumen $(2\pi/L)^2$ einnimmt kann somit $q_D$ bestimmt werden auf
+\begin{equation}
+	q_D = \qty(6\pi \frac{N}{V})^{1/3} \,.
+	\label{eq:D-q}
+\end{equation}
+Analog erhält man so eine Debey-Frequenz von
+\begin{equation}
+	\omega_{D,i} = q_D v_i
+	\label{eq:D-Freg}
+\end{equation}
+mit $v_i$ als Schallgeschwindigkeit des i-ten Dispersionszweiges. 
+Die Zustandsdichte eines Dispersionszweiges ist gegeben mit
+\begin{equation}
+	D_i(\omega)= \frac{V}{2\pi^2}\frac{q^2}{v_i} =   \frac{V}{2\pi^2}\frac{\omega^2}{v_i^3} \,.
+	\label{eq:D-Disp}
+\end{equation}
+Die Größe von $\omega_D$ ist zudem auch dadurch gegeben, dass
+\begin{equation}
+	\int D(\omega) \dd\omega = 3 N
+	\label{eq:}
+\end{equation}
+ergeben muss.
+Mit der Einführung der Debey-Temperatur
+\begin{equation}
+	\Theta_D = \frac{\hbar\omega_D}{k_B} \,,
+	\label{eq:D-Temp}
+\end{equation}
+sowie der Substitution
+\begin{equation}
+	x=\frac{\hbar v_s q}{k_B T} \,,
+\end{equation}
+ergibt sich somit 
+\begin{equation}
+	C_V^D = 9Nk_B \qty(\frac{T}{\Theta_D})^3 \int_0^{\Theta_D/T} \frac{x^4e^x \dd x}{(e^x-1)^2} \,.
+\end{equation}
+Die so erhaltene Wärmekapazität wird in der Näherung für hohe Temperaturen wieder das erwartete Dulong-Petit-Gesetz, zudem zeigt sie das gewünschte $T^3$ Verhalten bei tiefen Temperaturen.
+
+Die eingeführte Debye-Temperatur $\Theta_D$ stellt ein Maß für die Größe der im Material vorkommenden Phononenfrequenzen da. Zudem gibt sie auch einen Grenzbereich zwischen klassischer und quantenmechanischer Betrachtung eines Festkörpers an. Für Temperaturen kleiner der Debye-Temperatur ist eine quantenmechanische Betrachtung notwendig, da einige Moden eingefroren sind. Für Temperaturen darüber kann klassisch gerechnet werden.
